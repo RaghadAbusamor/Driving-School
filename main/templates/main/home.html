@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Welcome to AbuSammour Driving School</h1>
+    <h2>Testimonials</h2>
+    <ul>
+        {% for testimonial in testimonials %}
+            <li>{{ testimonial.name }}: "{{ testimonial.content }}"</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'services' %}">See Our Driving Courses</a>
+{% endblock %}

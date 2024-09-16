@@ -1,0 +1,15 @@
+<!-- category_list.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Category List</h1>
+    <ul>
+        {% for category in categories %}
+            <li>
+                <!-- Link to view exams in a specific category -->
+                <a href="{% url 'category_exams' category.id %}">{{ category.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_category' %}">Add New Category</a>
+{% endblock %}

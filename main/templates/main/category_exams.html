@@ -1,0 +1,16 @@
+<!-- category_exams.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Exams in {{ category.name }}</h1>
+
+    <ul>
+        {% for exam in exams %}
+            <li>{{ exam.title }} - <a href="{% url 'exam_detail' exam.id %}">View Details</a></li>
+        {% empty %}
+            <li>No exams available in this category.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'category_list' %}">Back to Category List</a>
+{% endblock %}

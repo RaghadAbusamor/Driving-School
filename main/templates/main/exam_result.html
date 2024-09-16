@@ -1,0 +1,23 @@
+<!-- exam_result.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Exam Results for {{ exam.title }}</h1>
+
+    <p>You answered {{ correct_count }} out of {{ total_questions }} questions correctly.</p>
+    <p>Your score is {{ score }}%.</p>
+
+    <ul>
+        {% for response in user_responses %}
+            <li>
+                <h3>Question: {{ response.question.question_text }}</h3>
+                <p>Your Answer: {{ response.selected_choice.choice_text }} {% if response.is_correct %}(Correct){% else %}(Incorrect){% endif %}</p>
+                {% if not response.is_correct %}
+                    <p>Correct Answer: {{ response.correct_choice.choice_text }}</p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'category_exams' exam.category.id %}">Back to Category Exams</a>
+{% endblock %}

@@ -1,0 +1,30 @@
+<!-- exam_detail.html -->
+<h2>{{ exam.title }}</h2>
+
+<form method="post">
+    {% csrf_token %}
+    {% for question in exam.questions.all %}
+        <div>
+            <p>{{ question.question_text }}</p>
+
+            {% if question.question_image %}
+                <img src="{{ question.question_image.url }}" alt="Question Image">
+            {% endif %}
+
+            <ul>
+                {% for choice in question.choices.all %}
+                    <li>
+                        <label>
+                            <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
+                            {{ choice.choice_text }}
+                            {% if choice.choice_image %}
+                                <img src="{{ choice.choice_image.url }}" alt="Choice Image">
+                            {% endif %}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endfor %}
+    <button type="submit">Submit Exam</button>
+</form>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Question</title>
+</head>
+<body>
+    <h1>Add Question to Exam: {{ exam.title }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="question_text">Question:</label>
+        <textarea name="question_text" required></textarea><br>
+        
+        <button type="submit">Add Question</button>
+    </form>
+    <a href="{% url 'control_panel' %}">Back to Control Panel</a>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Exam</title>
+</head>
+<body>
+    <h1>Add Exam to Category: {{ category.name }}</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="title">Exam Title:</label>
+        <input type="text" name="title" required><br>
+        
+        <label for="description">Description:</label>
+        <textarea name="description"></textarea><br>
+        
+        <button type="submit">Add Exam</button>
+    </form>
+    <a href="{% url 'control_panel' %}">Back to Control Panel</a>
+</body>
+</html>
