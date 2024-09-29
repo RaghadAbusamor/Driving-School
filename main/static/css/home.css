@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Mada:wght@200..900&display=swap');
+
+.cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    z-index: 1;
+    animation: fadeIn 2s ease-in;
+}
+
+.mada-Title {
+    font-family: "Almarai", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+}
+
+.cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* filter: brightness(0.7); */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(248, 245, 245, 0.7);
+    z-index: 2;
+}
+
+.home-wrapper {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: rgb(0, 0, 0);
+    animation: slideIn 1s ease-in-out;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
+    margin-top: 7rem;
+}
+
+.home-wrapper h1 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    animation: glow 1.5s infinite alternate;
+}
+
+.home-wrapper h2 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.test-E {
+    padding-left: 1.5rem;
+}
+
+.home-wrapper a {
+    display: inline-block;
+    margin-top: 10rem;
+    padding: 30px 150px;
+    background-color: #f39c12;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.home-wrapper a:hover {
+    background-color: #C2A661;
+    transform: scale(1.05);
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #f39c12;
+    }
+    100% {
+        text-shadow: 0 0 20px #f39c12;
+    }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .home-wrapper {
+        margin-top: 3rem; /* Reduced margin for smaller screens */
+    }
+
+    .home-wrapper h1 {
+        font-size: 3rem; /* Adjusted size for smaller screens */
+        letter-spacing: 2px; /* Adjusted letter spacing */
+    }
+
+    .home-wrapper h2 {
+        font-size: 2rem; /* Adjusted size for smaller screens */
+    }
+
+    .home-wrapper a {
+        padding: 15px 40px; /* Smaller padding for buttons */
+        font-size: 1.2rem; /* Adjusted font size */
+        margin-top: 5rem; /* Reduced margin-top */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-wrapper h1 {
+        font-size: 2.5rem; /* Further reduced size for very small screens */
+    }
+
+    .home-wrapper h2 {
+        font-size: 1.5rem; /* Further reduced size for very small screens */
+    }
+
+    .home-wrapper a {
+        padding: 10px 20px; /* Smaller padding for buttons */
+        font-size: 1rem; /* Adjusted font size */
+        margin-top: 3rem; /* Further reduced margin-top */
+    }
+}

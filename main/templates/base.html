@@ -1,29 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AbuSammour Driving School</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="../../main/static/css/style.css">
 </head>
+
 <body>
     <header>
-        <nav>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'services' %}">Services</a>
-            <a href="{% url 'contact' %}">Contact Us</a>
-            <a href="{% url 'category_list' %}">Exams</a>
+        <nav class="navbar">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                </div>
+            </div>
+            <div class="navbar-bottom">
+                <a class="links" href="{% url 'about' %}">
+                    من نحن
+                    <img src="{% static 'images/profile.png' %}" alt="About Icon" class="nav-icon">
+                </a>
+                <a class="links" href="{% url 'services' %}">
+                    الاسئلة الشائعة
+                    <img src="{% static 'images/qa.png' %}" alt="Services Icon" class="nav-icon">
+                </a>
+                <a class="links" href="{% url 'category_list' %}">
+                    اسئلة التؤوريا
+                    <img src="{% static 'images/exam.png' %}" alt="Exam Icon" class="nav-icon">
+                </a>
+                <a class="links" href="{% url 'home' %}">
+                    الرئيسية
+                    <img src="{% static 'images/home.png' %}" alt="Home Icon" class="nav-icon">
+                </a>
+            </div>
         </nav>
     </header>
-
     <main>
         {% block content %}{% endblock %}
     </main>
-
-    <footer>
-        <p>© 2024 AbuSammour Driving School</p>
-    </footer>
 </body>
+
 </html>
