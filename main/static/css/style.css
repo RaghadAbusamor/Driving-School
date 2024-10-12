@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Mada:wght@200..900&display=swap');
+
 body {
     background-color: #e9ecef; /* Light gray background */
     font-family: 'Arial', sans-serif;
@@ -5,6 +7,11 @@ body {
     padding: 0;
 }
 
+.mada-Title {
+    font-family: "Almarai", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+}
 /* Navbar styles */
 .navbar {
     background-color: white;

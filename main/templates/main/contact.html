@@ -1,18 +1,42 @@
 {% extends 'base.html' %}
-
-{% block content %}
-<div class="contact-container">
-    <h1>Contact Us</h1>
-    <div class="contact-icons">
-        <a href="mailto:youremail@gmail.com" target="_blank">
-            <i class="fa fa-envelope"></i> Gmail
-        </a>
-        <a href="https://wa.me/yourwhatsappnumber" target="_blank">
-            <i class="fa fa-whatsapp"></i> WhatsApp
-        </a>
-        <a href="https://www.facebook.com/yourpage" target="_blank">
-            <i class="fa fa-facebook"></i> Facebook
-        </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/contact.css' %}">
+    <title>اتصل بنا</title>
+</head>
+<body>
+    {% block content %}
+    <div class="contact-container">
+        <h1>اتصل بنا</h1>
+        <div class="contact-info">
+            <div class="contact-item">
+                <img src="{% static 'images/phone.png' %}" alt="Phone Icon" class="contact-icon">
+                <div class="contact-details">
+                    <span>اتصل بنا</span>
+                    <span class="contact-number">0595394376</span>
+                    <span class="contact-number">05998222505</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <img src="{% static 'images/facebook.png' %}" alt="Facebook Icon" class="contact-icon">
+                <div class="contact-details">
+                    <span>فيس بوك</span>
+                    <span>مدرسة ابوسمرو لتعليم السياقة</span>
+                </div>
+            </div>
+            <div class="contact-item">
+                <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp Icon" class="contact-icon">
+                <div class="contact-details">
+                    <span>واتساب</span>
+                    <span class="contact-number">+972 595394376</span>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}
+</body>
+</html>

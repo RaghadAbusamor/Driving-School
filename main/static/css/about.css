@@ -1,0 +1,68 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+/* Page Heading */
+.about-container h1 {
+    font-size: 3rem;
+    color: #c2001a; /* Main color for headings */
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: center;
+    direction: rtl;
+}
+
+/* Section Styling */
+.about-section {
+    background-color: #ffffff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 70rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items */
+    direction: rtl;
+}
+
+/* Header and Paragraph Arrangement */
+.about-section h2 {
+    font-size: 1.8rem;
+    color: #c2001a; /* Secondary color for subheadings */
+    margin: 0 0 10px 0; /* Adjust margins */
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1.4rem;
+    color: #555;
+    line-height: 1.8;
+    text-align: right;
+    margin: 0; /* Remove default margins for alignment */
+}
+
+/* Optional: Create a gap between each section */
+.about-section > div {
+    margin: 10px 0; /* Add margin between items */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .about-container h1 {
+        font-size: 2.5rem;
+    }
+
+    .about-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .about-section p {
+        font-size: 1.2rem;
+    }
+}

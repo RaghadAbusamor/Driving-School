@@ -70,18 +70,16 @@
     animation-delay: 0.5s;
 }
 
-.test-E {
-    padding-left: 1.5rem;
-}
+
 
 .home-wrapper a {
     display: inline-block;
     margin-top: 10rem;
-    padding: 30px 150px;
-    background-color: #f39c12;
+    padding: 30px 200px;
+    background-color: #c2001a;
     color: #fff;
     text-transform: uppercase;
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     text-decoration: none;
     border-radius: 50px;
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -91,7 +89,7 @@
 }
 
 .home-wrapper a:hover {
-    background-color: #C2A661;
+    background-color: #c03749;
     transform: scale(1.05);
 }
 
@@ -172,4 +170,8 @@
         font-size: 1rem; /* Adjusted font size */
         margin-top: 3rem; /* Further reduced margin-top */
     }
+}
+.test-E {
+    padding-left: 2rem;
+    background-color:#c2001a ;
 }
