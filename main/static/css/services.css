@@ -31,7 +31,7 @@ h1 {
 }
 
 .step {
-    background-color: #c2001a;
+    background-color: hsl(352, 100%, 38%);
     color: white;
     width: 15rem;
     height: 25rem;

@@ -1,0 +1,67 @@
+/* Exam List Styles */
+.exam-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line */
+    justify-content: center; /* Center align the items */
+    list-style: none;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+.exam-item {
+    margin: 20px; /* Space between items */
+    flex: 0 1 calc(20% - 40px); /* Responsive box sizes, 5 per row with margins */
+    display: flex; /* Add flex to center align content */
+    justify-content: center; /* Center align the content */
+    align-items: center; /* Center align vertically */
+}
+
+.exam-link {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    text-decoration: none;
+    background: linear-gradient(135deg, #fff 50%, hsl(352, 100%, 38%) 50%); /* Gradient background */
+    color: hsl(352, 100%, 38%); /* Text color matching the theme */
+    padding: 20px; /* Keep some padding */
+    font-size: 2rem; /* Adjusted font size for better readability */
+    border: 5px solid hsl(352, 100%, 38%); /* Red border */
+    transition: all 0.3s ease; /* Smooth transition for all properties */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow for depth */
+    width: 220px; /* Set a fixed width for exam boxes */
+    height: 300px; /* Increased height for a more rectangular shape */
+    position: relative; /* Needed for pseudo-elements */
+    overflow: hidden; /* Prevents overflow from pseudo-elements */
+    border-radius: 15px; /* Slightly more rounded corners */
+    clip-path: polygon(0 0, 10% 0%, 100% 10%, 100% 90%, 10% 100%, 0 100%); /* Unique exam shape */
+}
+
+/* Add a hover effect with a slight scale transformation */
+.exam-link:hover {
+    transform: scale(1.05); /* Slightly scale up on hover */
+    color: #fff; /* Change text color on hover */
+    background: hsl(352, 100%, 38%); /* Red background on hover */
+}
+
+/* Add a pseudo-element for a modern touch */
+.exam-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1); /* Light overlay for effect */
+    opacity: 0; /* Start hidden */
+    transition: opacity 0.3s ease; /* Smooth transition for overlay */
+}
+
+.exam-link:hover::after {
+    opacity: 1; /* Show overlay on hover */
+}
+
+/* Style for the text in the link */
+.exam-link span {
+    position: relative;
+    z-index: 1; /* Ensure text appears above the background */
+}

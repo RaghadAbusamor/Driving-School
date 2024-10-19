@@ -9,7 +9,7 @@
 /* Page Heading */
 .about-container h1 {
     font-size: 3rem;
-    color: #c2001a; /* Main color for headings */
+    color: hsl(352, 100%, 38%); /* Main color for headings */
     margin-bottom: 25px;
     font-weight: bold;
     text-align: center;

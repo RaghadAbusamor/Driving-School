@@ -2,22 +2,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Exam Results for {{ exam.title }}</h1>
+    <div class="result-container">
+        <h1>نتائج {{ exam.title }}</h1>
 
-    <p>You answered {{ correct_count }} out of {{ total_questions }} questions correctly.</p>
-    <p>Your score is {{ score }}%.</p>
+        <p>لقد أجبت على <strong>{{ correct_count }}</strong> من أصل <strong>{{ total_questions }}</strong> أسئلة بشكل صحيح.</p>
+        <p>درجتك هي <strong>{{ score }}%</strong>.</p>
 
-    <ul>
-        {% for response in user_responses %}
-            <li>
-                <h3>Question: {{ response.question.question_text }}</h3>
-                <p>Your Answer: {{ response.selected_choice.choice_text }} {% if response.is_correct %}(Correct){% else %}(Incorrect){% endif %}</p>
-                {% if not response.is_correct %}
-                    <p>Correct Answer: {{ response.correct_choice.choice_text }}</p>
-                {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+        <h4>راجع إجاباتك:</h4>
+        <div class="review-container">
+            {% for response in user_responses %}
+                <div class="review-item {{ response.is_correct|yesno:'correct,incorrect' }}">
+                    <p><strong>السؤال:</strong> {{ response.question.question_text }}</p>
+                    <p><strong>إجابتك:</strong> {{ response.selected_choice.choice_text }}</p>
+                    {% if not response.is_correct %}
+                        <p class="correct-answer"><strong>الإجابة الصحيحة:</strong> {{ response.correct_choice.choice_text }}</p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
 
-    <a href="{% url 'category_exams' exam.category.id %}">Back to Category Exams</a>
+        <a href="{% url 'category_exams' exam.category.id %}" class="back-btn">العودة إلى امتحانات الفئة</a>
+    </div>
 {% endblock %}
