@@ -1,63 +1,40 @@
-/* Reset some default browser styles */
+/* Add this to your contact.css file */
 
 .contact-container {
-    max-width: 600px; /* Maximum width for the container */
-    margin: 50px auto; /* Center the container */
-    padding: 20px; /* Padding for inner spacing */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-    text-align: center; /* Center text */
-    background-color: red;
-}
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: right; /* Keep the text aligned to the right since the content is in Arabic */
+    direction: rtl; /* Ensure the content follows right-to-left (RTL) direction */
 
-h1 {
-    font-size: 2.5em; /* Large heading */
-    color: #482D39; /* Darker text color */
-    margin-bottom: 10px; /* Space below heading */
+background-color: red;
 }
 
 .contact-info {
-    display: flex; /* Use flexbox for layout */
-
-    background-color: red; /* Background color */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns items to the left side */
+    gap: 20px;
 }
 
 .contact-item {
-    display: flex; /* Use flexbox for layout */
-    align-items: center; /* Center items vertically */
-    margin: 15px 0; /* Space between items */
-    width: 100%; /* Full width for the item */
+    display: flex;
+    align-items: center; /* Align icon and text vertically */
+    justify-content: flex-start;
+    width: 100%; /* Make sure it spans the entire container */
 }
 
 .contact-icon {
-    width: 50px; /* Icon size */
-    height: 50px; /* Icon size */
-    margin-right: 15px; /* Space between icon and text */
+    width: 30px;
+    height: 30px;
+    margin-left: 15px; /* Adds space between the icon and the text */
 }
 
 .contact-details {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Arrange text vertically */
-    text-align: left; /* Left-align the text */
+    display: flex;
+    flex-direction: column;
+    text-align: right; /* Keep the text aligned to the right for RTL */
 }
 
 .contact-number {
-    display: block; /* Display numbers on separate lines */
-    color: #555; /* Lighter text color */
-    font-size: 1em; /* Font size for numbers */
-}
-
-@media (max-width: 600px) {
-    h1 {
-        font-size: 2em; /* Smaller heading on small screens */
-    }
-
-    .contact-icon {
-        width: 40px; /* Smaller icon size on small screens */
-        height: 40px; /* Smaller icon size on small screens */
-    }
-
-    p {
-        font-size: 0.9em; /* Adjust paragraph size */
-    }
+    font-weight: bold;
 }

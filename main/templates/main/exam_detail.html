@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 
 <!DOCTYPE html>
@@ -6,51 +5,47 @@
 
 <head>
     {% load static %}
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/exam_detail.css' %}">
-
     <title>الاسئلة</title>
 </head>
 
 <body>
     {% block content %}
-    <div class="container">
-       <!-- exam_detail.html -->
-<!-- exam_detail.html -->
-<h2>{{ exam.title }}</h2>
+    <div class="exam-container">
+        <h2>{{ exam.title }}</h2>
+        <form method="post" class="exam-form">
+            {% csrf_token %}
+            <div class="questions-container">
+                {% for question in exam.questions.all %}
+                <div class="question">
+                    <p class="question-text">{{ question.question_text }}</p>
 
-<form method="post" class="exam-form">
-    {% csrf_token %}
-    <div class="questions-container">
-        {% for question in exam.questions.all %}
-            <div class="question">
-                <p class="question-text">{{ question.question_text }}</p>
-
-                {% if question.question_image %}
+                    {% if question.question_image %}
                     <img src="{{ question.question_image.url }}" alt="Question Image" class="question-image">
-                {% endif %}
+                    {% endif %}
 
-                <ul class="options-list">
-                    {% for choice in question.choices.all %}
+                    <ul class="options-list">
+                        {% for choice in question.choices.all %}
                         <li class="option-item">
                             <label>
                                 <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
                                 {{ choice.choice_text }}
                                 {% if choice.choice_image %}
-                                    <img src="{{ choice.choice_image.url }}" alt="Choice Image" class="choice-image">
+                                <img src="{{ choice.choice_image.url }}" alt="Choice Image" class="choice-image">
                                 {% endif %}
                             </label>
                         </li>
-                    {% endfor %}
-                </ul>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
             </div>
-        {% endfor %}
+            <button type="submit" class="submit-btn">ارسال الامتحان</button>
+        </form>
     </div>
-    <button type="submit" class="submit-btn">Submit Exam</button>
-</form>
-{% endblock %}
+    {% endblock %}
 </body>
 
 </html>

@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
@@ -8,19 +9,22 @@
     <title>Home - AbuSammour Driving School</title>
     <link rel="stylesheet" href="{% static 'styles/home.css' %}">
 </head>
+
 <body>
     {% block content %}
     <div class="cover">
         <div class="overlay"></div>
         <img src="{% static 'images/bg.jpg' %}" alt="Background Image">
     </div>
-    
+
     <div class="home-wrapper">
         <h1 class="mada-Title">مدرسة ابوسمور لتعليم السياقة</h1>
-        <h2 class="mada-Title">خيارك الاول والافضل</h2>
-        <a class="test-E mada-Title"  href="{% url 'category_list' %}">أسئلة التؤوريا</a>
+        <h2 class="mada-Title sub-text">خيارك الاول والافضل</h2>
+        <a class="test-E mada-Title" href="{% url 'category_list' %}">أسئلة التؤوريا</a>
+
     </div>
-    
+  
     {% endblock %}
 </body>
+
 </html>

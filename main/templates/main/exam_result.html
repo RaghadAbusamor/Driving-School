@@ -1,7 +1,14 @@
 <!-- exam_result.html -->
 {% extends 'base.html' %}
-
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% block content %}
     <div class="result-container">
         <h1>نتائج {{ exam.title }}</h1>
 
@@ -24,3 +31,7 @@
         <a href="{% url 'category_exams' exam.category.id %}" class="back-btn">العودة إلى امتحانات الفئة</a>
     </div>
 {% endblock %}
+
+
+</body>
+</html>

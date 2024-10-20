@@ -16,7 +16,9 @@
     font-weight: bolder;
     font-style: normal;
 }
-
+.sub-text{
+    text-shadow: 1px 1px 1px #c03749;
+}
 .cover img {
     width: 100%;
     height: 100%;
@@ -175,3 +177,6 @@
     padding-left: 2rem;
     background-color:#c2001a ;
 }
+
+
+
