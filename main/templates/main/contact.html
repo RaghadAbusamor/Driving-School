@@ -1,44 +1,103 @@
 {% extends 'base.html' %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="rtl">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/contact.css' %}">
-
     <title>اتصل بنا</title>
 </head>
+
 <body>
     {% block content %}
-    <div class="contact-container">
-        
-        <h1>اتصل بنا</h1>
+    <div class="contact-container"
+        style="max-width: 600px; margin: 40px auto; padding: 20px; text-align: right; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+
+        <h1 style="font-size: 2em; color: #333; margin-bottom: 20px; text-align: right;">اتصل بنا</h1>
+
         <div class="contact-info">
-            <div class="contact-item">
-                <img src="{% static 'images/phone.png' %}" alt="Phone Icon" class="contact-icon">
-                <div class="contact-details">
-                    <span>اتصل بنا</span>
-                    <span class="contact-number">0595394376</span>
-                    <!-- <span class="contact-number">05998222505</span> -->
+            <!-- Phone Contact -->
+            <div class="contact-item"
+                style="display: flex; align-items: center; margin-bottom: 15px; padding: 10px; flex-direction: row-reverse;">
+                <img src="{% static 'images/phone.png' %}" alt="Phone Icon" class="contact-icon"
+                    style="width: 40px; height: 40px; margin-right: 15px; margin-left: 15px;">
+                <div class="contact-details" style="flex-grow: 1; text-align: right;">
+                    <span style="display: block; font-size: 1.1em; color: #555;">اتصل بنا</span>
+                    <span class="contact-number" style="font-size: 1em; color: #333;">0595394376</span>
+                    <br>
+                    <span class="contact-number" style="font-size: 1em; color: #333;">0599822505</span>
                 </div>
             </div>
-            <div class="contact-item">
-                <img src="{% static 'images/facebook.png' %}" alt="Facebook Icon" class="contact-icon">
-                <div class="contact-details">
-                    <span>فيس بوك</span>
-                    <span>مدرسة ابوسمرو لتعليم السياقة</span>
+
+            <!-- Facebook Contact -->
+            <div class="contact-item"
+                style="display: flex; align-items: center; margin-bottom: 15px; padding: 10px; flex-direction: row-reverse;">
+                <img src="{% static 'images/facebook.png' %}" alt="Facebook Icon" class="contact-icon"
+                    style="width: 40px; height: 40px; margin-right: 15px; margin-left: 15px;">
+                <div class="contact-details" style="flex-grow: 1; text-align: right;">
+                    <span style="display: block; font-size: 1.1em; color: #555;">فيس بوك</span>
+                    <span style="font-size: 1em; color: #333;">مدرسة ابوسمرو لتعليم السياقة</span>
                 </div>
             </div>
-            <div class="contact-item">
-                <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp Icon" class="contact-icon">
-                <div class="contact-details">
-                    <span>واتساب</span>
-                    <span class="contact-number">+972 595394376</span>
+
+            <!-- WhatsApp Contact -->
+            <div class="contact-item"
+                style="display: flex; align-items: center; margin-bottom: 15px; padding: 10px; flex-direction: row-reverse;">
+                <img src="{% static 'images/whatsapp.png' %}" alt="WhatsApp Icon" class="contact-icon"
+                    style="width: 40px; height: 40px; margin-right: 15px;  margin-left: 15px;">
+                <div class="contact-details" style="flex-grow: 1; text-align: right;">
+                    <span style="display: block; font-size: 1.1em; color: #555;">واتساب</span>
+                    <span class="contact-number" style="font-size: 1em; color: #333;">+972 595394376</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <style>
+        /* Responsive Styles */
+        @media (max-width: 600px) {
+            .contact-container {
+                padding: 15px;
+                margin: 20px auto;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 1.8em;
+            }
+
+            .contact-item {
+                flex-direction: column-reverse;
+                align-items: flex-end;
+                text-align: right;
+            }
+
+            .contact-item img {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+
+            .contact-details {
+                text-align: right;
+            }
+
+            .contact-number {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 400px) {
+            h1 {
+                font-size: 1.6em;
+            }
+
+            .contact-item {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
     {% endblock %}
 </body>
+
 </html>
