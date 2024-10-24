@@ -2,13 +2,17 @@
 
 body {
     background-color: #f4f2f3; /* Light gray background */ 
-    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-}
+    scroll-behavior: smooth;
 
+}
+*{
+    scroll-behavior: smooth;
+
+}
 .mada-Title {
     font-family: "Almarai", sans-serif;
     font-weight: bolder;
@@ -25,6 +29,7 @@ body {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between; /* Adjusted for better spacing */
+
 }
 
 .navbar-bottom {
@@ -108,6 +113,7 @@ footer {
     margin-right: 0;
     margin-bottom: 0;
     z-index: 50 ;
+    font-size: medium;
 }
 
 /* Responsive styles */

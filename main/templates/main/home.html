@@ -12,18 +12,117 @@
 
 <body>
     {% block content %}
-    <div class="cover">
+    <section class="hero-section">
         <div class="overlay"></div>
-        <img src="{% static 'images/bg.jpg' %}" alt="Background Image">
-    </div>
+        <img src="{% static 'images/bg.jpg' %}" alt="Background Image" class="bg-image">
+        <div class="content">
+            <h1 class="mada-Title title">مدرسة ابوسمور لتعليم السياقة</h1>
+            <h2 class="mada-Title sub-text">خيارك الاول والافضل</h2>
+            <a class="test-E mada-Title" href="{% url 'category_list' %}">أسئلة التؤوريا</a>
+        </div>
+    </section>
 
-    <div class="home-wrapper">
-        <h1 class="mada-Title">مدرسة ابوسمور لتعليم السياقة</h1>
-        <h2 class="mada-Title sub-text">خيارك الاول والافضل</h2>
-        <a class="test-E mada-Title" href="{% url 'category_list' %}">أسئلة التؤوريا</a>
-
+    <!-- ---------start of services -------------------------------------------- -->
+    <div class="license-container">
+        <h1>الحصول على رخصة</h1>
+        <p class="sub-heading">الإجراءات القانونية</p>
+        <div class="license-steps">
+            <div class="step">
+                <img src="{% static 'images/id.png' %}" alt="الحصول على الرخصة">
+                <p>الحصول على الرخصة</p>
+                <div class="hover-content">
+                    <p>بعد النجاح بالإمتحان العملي (التست) يمكنك الحصول على رخصة السياقة من دائرة الترخيص. أيام الأحد إلى الخميس من الساعة 08:00 صباحًا إلى 01:00 مساء مع صورة إحضار بطاقة الهوية الشخصية والذهاب شخصيًا لاستلام الرخصة.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/steering.png' %}" alt="الاختبار العملي">
+                <p>الاختبار العملي (التست)</p>
+                <div class="hover-content">
+                    <p>الخطوة الأخيرة بعد إتقان المهارات الأساسية في القيادة هي التقدم للإمتحان العملي الرسمي في أي يوم من الأحد إلى الخميس عن طريق المدرسة المعتمدة.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/monitor.png' %}" alt="الاختبار النظري">
+                <p>الاختبار النظري (التؤوريا)</p>
+                <div class="hover-content">
+                    <p>بعد دراسة التؤوريا جيداً والتدرب على الامتحانات، يمكنك التقدم لامتحان التؤوريا الرسمي في أي يوم من الأحد إلى الخميس.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/examination.png' %}" alt="الفحص الطبي">
+                <p>الفحص الطبي</p>
+                <div class="hover-content">
+                    <p>الفحص الطبي هو الخطوة الأولى بعد عمل المعاملة في مدرسة السياقة، ويجب الذهاب باكرًا للحصول على الفحص الطبي.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  
+    <!-- ---------------start of FAQ------------------------------ -->
+    <div class="faq-container" style="max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center;">
+        <h1 style="font-size: 2.5em; color: #333; margin-bottom: 30px;">الأسئلة الشائعة</h1>
+
+        <div class="faq-items" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+
+            <div class="cards-wrapper"
+                style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; width: 100%;">
+
+                <!-- FAQ Item 1 -->
+                <div class="faq-item"
+                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما هي إجراءات تحويل رخصة أجنبية إلى
+                        رخصة فلسطينية؟</span>
+                    <div class="icon"
+                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
+                        +</div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="faq-item"
+                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما المطلوب لإصدار رخصة بعد الفحص
+                        العملي للنسوة؟</span>
+                    <div class="icon"
+                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
+                        +</div>
+                </div>
+            </div>
+
+            <div class="cards-wrapper"
+                style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; width: 100%;">
+
+                <!-- FAQ Item 3 -->
+                <div id="FAQ" class="faq-item"
+                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما هي إجراءات إصدار الرخصة بعد
+                        فقدانها؟</span>
+                    <div class="icon"
+                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
+                        +</div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="faq-item"
+                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما هي إجراءات إصدار الرخصة بعد
+                        انتهائها؟</span>
+                    <div class="icon"
+                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
+                        +</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------End of FAQ---------------------- -->
+     <iframe 
+  src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3405.1476087151696!2d34.94725797560719!3d31.410058974264704!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDI0JzM2LjIiTiAzNMKwNTYnNTkuNCJF!5e0!3m2!1sen!2s!4v1729714970459!5m2!1sen!2s"
+  width="600" 
+  height="450" 
+  style="border:0;" 
+  allowfullscreen="" 
+  loading="lazy" 
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
     {% endblock %}
 </body>
 
