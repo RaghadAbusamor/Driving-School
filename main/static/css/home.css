@@ -1,13 +1,15 @@
+
+body{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 .hero-section {
     flex: 1;
-    /* This will make the section take the remaining space */
-    position: relative;
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     text-align: center;
-    padding-top: 2rem;
+    height: 80vh;
+
 }
 
 /* Overlay layer */
@@ -221,6 +223,7 @@
 
 .license-container {
     padding: 20px;
+    /* background-color: red; */
 }
 
 h1 {
@@ -241,13 +244,15 @@ h1 {
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 20px;
+    /* background-color: pink; */
+    width: 100%;
 }
 
 .step {
     background-color: hsl(352, 100%, 38%);
     color: white;
-    width: 15rem;
-    height: 25rem;
+    width: 10rem;
+    height: 20rem;
     padding: 20px;
     border-radius: 20px;
     text-align: center;

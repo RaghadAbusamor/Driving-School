@@ -12,11 +12,12 @@
 <body>
     {% block content %}
     <div class="contact-container"
-        style="max-width: 600px; margin: 40px auto; padding: 20px; text-align: right; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        style="max-width: 900px; margin: 40px auto; padding: 20px; text-align: right; background-color: #f9f9f9; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; flex-direction: row-reverse; justify-content: space-between;">
 
-        <h1 style="font-size: 2em; color: #333; margin-bottom: 20px; text-align: right;">اتصل بنا</h1>
+        <!-- Contact Information Section -->
+        <div class="contact-info" style="flex: 1; margin-right: 20px;">
+            <h1 style="font-size: 2em; color: #333; margin-bottom: 20px; text-align: right;">اتصل بنا</h1>
 
-        <div class="contact-info">
             <!-- Phone Contact -->
             <div class="contact-item"
                 style="display: flex; align-items: center; margin-bottom: 15px; padding: 10px; flex-direction: row-reverse;">
@@ -37,7 +38,8 @@
                     style="width: 40px; height: 40px; margin-right: 15px; margin-left: 15px;">
                 <div class="contact-details" style="flex-grow: 1; text-align: right;">
                     <span style="display: block; font-size: 1.1em; color: #555;">فيس بوك</span>
-                    <span style="font-size: 1em; color: #333;">مدرسة ابوسمرو لتعليم السياقة</span>
+                    <a href=" https://www.facebook.com/Luay.sammor2014" target="_blank" style="font-size: 1em; color: #333;text-decoration: none; ">مدرسة
+                        ابوسمور لتعليم السياقة</a>
                 </div>
             </div>
 
@@ -52,17 +54,31 @@
                 </div>
             </div>
         </div>
+
+        <!-- Location Section -->
+        <div class="location-section" style="flex: 1;">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3399.202029122892!2d35.09615327561365!3d31.573507274189716!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzHCsDM0JzI0LjYiTiAzNcKwMDUnNTUuNCJF!5e0!3m2!1sen!2s!4v1729949709949!5m2!1sen!2s"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <small style="color: #555; padding: 5px;" >See Our Location | شاهد موقعنا</small>
+        </div>
     </div>
 
     <style>
         /* Responsive Styles */
-        @media (max-width: 600px) {
+        @media (max-width: 900px) {
             .contact-container {
-                padding: 15px;
-                margin: 20px auto;
-                max-width: 100%;
+                flex-direction: column;
             }
 
+            .location-section {
+                margin-top: 20px;
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 600px) {
             h1 {
                 font-size: 1.8em;
             }
@@ -70,7 +86,6 @@
             .contact-item {
                 flex-direction: column-reverse;
                 align-items: flex-end;
-                text-align: right;
             }
 
             .contact-item img {
@@ -82,8 +97,9 @@
                 text-align: right;
             }
 
-            .contact-number {
-                font-size: 1em;
+            iframe {
+                width: 100%;
+                height: 250px;
             }
         }
 
@@ -94,6 +110,10 @@
 
             .contact-item {
                 margin-bottom: 10px;
+            }
+
+            iframe {
+                height: 200px;
             }
         }
     </style>
