@@ -1,9 +1,9 @@
-
-body{
+body {
     height: 100%;
     margin: 0;
     padding: 0;
 }
+
 .hero-section {
     flex: 1;
     width: 100%;
@@ -48,24 +48,24 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 5rem;
-    padding: 5rem;
     opacity: 0;
     transform: translateY(20px);
     animation: contentFadeIn 2.5s ease-out forwards;
-    /* Text fade-in and slide-up */
+
+    top: 20%;
+    transform: translate(-50%, -50%);
 }
 
 /* Title Styling */
 .mada-Title {
-    /* font-size: 2rem; */
+    /* font-size: 4rem; */
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 }
 
 .sub-text {
-    /* font-size: 2.5rem; */
-    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
     text-shadow: #000000 1px 1px 5px;
 }
 
@@ -73,14 +73,16 @@ body{
     text-shadow: #f39c12 1px 1px 5px;
     /* font-size: 4rem; */
     animation: titleAnimation 3s ease forwards;
+    font-size: 4rem;
+
 }
 
 /* Button Styling */
 .test-E {
     background-color: #c2001a;
     color: white;
-    padding: 1rem 9rem;
-    font-size: 1.7rem;
+    padding: 1rem 10rem;
+    font-size: 2rem;
     border-radius: 50px;
     text-decoration: none;
     transition: background-color 0.3s, transform 0.3s;
@@ -93,6 +95,45 @@ body{
     /* Button grows on hover */
 }
 
+/* Responsive design */
+@media (max-width: 1200px) {
+    .content {
+        font-size: 6rem;
+        padding: 4rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .content {
+        font-size: 5rem;
+        padding: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        font-size: 4rem;
+        padding: 2.5rem;
+        top: calc(15%);
+        /* Adjusting top for smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .content {
+        font-size: 3.5rem;
+        padding: 2rem;
+        top: calc(10%);
+    }
+}
+
+@media (max-width: 400px) {
+    .content {
+        font-size: 3rem;
+        padding: 1.5rem;
+        top: calc(5%);
+    }
+}
 
 
 
@@ -222,19 +263,21 @@ body{
 
 
 .license-container {
-    padding: 20px;
+    /* padding: 20px; */
     /* background-color: red; */
+    width: 100%;
+    height: 100vh;
 }
 
 h1 {
-    font-size: 3rem;
+    /* font-size: 3rem; */
     color: #000;
     margin-bottom: 10px;
     font-weight: bolder;
 }
 
 .sub-heading {
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: #555;
     margin-bottom: 30px;
 }
@@ -243,7 +286,6 @@ h1 {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    margin-top: 20px;
     /* background-color: pink; */
     width: 100%;
 }
@@ -251,12 +293,12 @@ h1 {
 .step {
     background-color: hsl(352, 100%, 38%);
     color: white;
-    width: 10rem;
-    height: 20rem;
+    width: 15rem;
+    height: 22rem;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -273,9 +315,9 @@ h1 {
 }
 
 .step img {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 10px;
+    /* width: 120px; */
+    /* height: 120px; */
+    /* margin-bottom: 10px; */
     object-fit: contain;
 }
 

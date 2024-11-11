@@ -62,62 +62,110 @@
             </div>
         </div>
     </div>
-    <!-- ---------------start of FAQ------------------------------ -->
-    <div class="faq-container" style=" max-width: 1200px; margin: 0 auto; padding: 20px; text-align: center;">
-        <h1 style="font-size: 2.5em; color: #333; margin-bottom: 30px;">الأسئلة الشائعة</h1>
+<!-- ---------------start of FAQ------------------------------ -->
+<div class="faq-container" style="height: 100vh; display: flex; align-items: center; justify-content: center; background-color: #eef2f3;">
+    <div class="faq-content" style="max-width: 800px; width: 100%; padding: 40px; background-color: #ffffff; border-radius: 15px; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);">
+        <h1 style="font-size: 2.5rem; color: #333; margin-bottom: 30px; text-align: center;">الأسئلة الشائعة</h1>
 
-        <div class="faq-items" style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+        <div class="faq-items" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
 
-            <div class="cards-wrapper"
-                style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; width: 100%;">
-
-                <!-- FAQ Item 1 -->
-                <div class="faq-item"
-                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
-                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما هي إجراءات تحويل رخصة أجنبية إلى
-                        رخصة فلسطينية؟</span>
-                    <div class="icon"
-                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-                        +</div>
+            <!-- FAQ Item 1 -->
+            <div class="faq-item" onclick="toggleAnswer(this)" style="position: relative; overflow: hidden; border-radius: 10px; background-color: #4c4c4c; color: #fff; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="faq-question" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.4rem; text-align: right;">ما هي إجراءات تحويل رخصة أجنبية إلى رخصة فلسطينية؟</span>
+                    <div class="icon" style="margin-left: 15px; background-color: #d9534f; color: #fff; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s ease;">+</div>
                 </div>
+                <div class="answer" style="display: none; max-height: 0; overflow: hidden; padding: 0 20px; color: #fff; font-size: 1.1rem; transition: max-height 0.4s ease;">
+                    <div style="padding: 15px; background-color: #555; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                        <ul style="text-align: right; list-style-type: square; padding-right: 20px; margin: 0;">
+                            <li>أن لا تقل عمر الرخصة عن سنة</li>
+                            <li>أن يثبت إقامته بالدولة الأجنبية الصادرة منها الرخصة</li>
+                            <li>عمل معاملة بمدرسة سياقة وذهاب لدائرة السير لعمل فحص نظر واعتماد الرخصة الأجنبية للتحويل</li>
+                            <li>التقدم لامتحان النظري المخفف المكون من ١٥ سؤالًا، لكل سؤال إجابتان للاختيار</li>
+                            <li>الرجوع لمدرسة السياقة لأخذ دروس حسب الحاجة</li>
+                            <li>التقدم للامتحان العملي (التست) ويكون اختبارًا مخففًا</li>
+                            <li>إصدار الرخصة من دائرة السير ولا يعتبر السائق سائقًا جديدًا</li>
+                        </ul>
+                        <p style="font-weight: bold; text-align: right; margin-top: 10px;">ملاحظة: الرخصة الأردنية لا تحتاج إلى التقدم للامتحان النظري أو العملي (التحويل مباشرة).</p>
+                    </div>
+                </div>
+            </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="faq-item"
-                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
-                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما المطلوب لإصدار رخصة بعد الفحص
-                        العملي للنسوة؟</span>
-                    <div class="icon"
-                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-                        +</div>
+            <!-- FAQ Item 2 -->
+            <div class="faq-item" onclick="toggleAnswer(this)" style="position: relative; overflow: hidden; border-radius: 10px; background-color: #4c4c4c; color: #fff; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="faq-question" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.4rem; text-align: right;">ما المطلوب لإصدار رخصة بعد الفحص العملي للنسوة؟</span>
+                    <div class="icon" style="margin-left: 15px; background-color: #d9534f; color: #fff; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s ease;">+</div>
+                </div>
+                <div class="answer" style="display: none; max-height: 0; overflow: hidden; padding: 0 20px; color: #fff; font-size: 1.1rem; transition: max-height 0.4s ease;">
+                    <div style="padding: 15px; background-color: #555; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                        <ul style="text-align: right; list-style-type: square; padding-right: 20px; margin: 0;">
+                            <li>إجراء فحص فصيلة الدم بأي مختبر طبي</li>
+                            <li>التوجه لدائرة السير وإظهار الهوية وفحص فصيلة الدم</li>
+                            <li>التقاط صورة شخصية بدائرة السير أو إحضار صورة بخلفية زرقاء</li>
+                            <li>دفع الرسوم لإصدار الرخصة</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
-            <div class="cards-wrapper"
-                style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; width: 100%;">
-
-                <!-- FAQ Item 3 -->
-                <div id="FAQ" class="faq-item"
-                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
-                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما هي إجراءات إصدار الرخصة بعد
-                        فقدانها؟</span>
-                    <div class="icon"
-                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-                        +</div>
+            <!-- FAQ Item 3 -->
+            <div class="faq-item" onclick="toggleAnswer(this)" style="position: relative; overflow: hidden; border-radius: 10px; background-color: #4c4c4c; color: #fff; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="faq-question" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.4rem; text-align: right;">ما هي إجراءات إصدار الرخصة بعد فقدانها؟</span>
+                    <div class="icon" style="margin-left: 15px; background-color: #d9534f; color: #fff; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s ease;">+</div>
                 </div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item"
-                    style="background-color: #4c4c4c; color: #fff; border-radius: 10px; padding: 30px; margin: 10px; width: calc(50% - 20px); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); display: flex; align-items: center; justify-content: space-between; transition: background-color 0.3s ease;">
-                    <span style="flex-grow: 1; font-size: 1.2em; text-align: right;">ما هي إجراءات إصدار الرخصة بعد
-                        انتهائها؟</span>
-                    <div class="icon"
-                        style="margin-left: 15px; background-color: red; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 1.5em;">
-                        +</div>
+                <div class="answer" style="display: none; max-height: 0; overflow: hidden; padding: 0 20px; color: #fff; font-size: 1.1rem; transition: max-height 0.4s ease;">
+                    <div style="padding: 15px; background-color: #555; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                        <p style="text-align: right; margin: 0;">الذهاب إلى دائرة السير وتعبئة النموذج الخاص بفقدان الرخصة وإصدار رخصة جديدة.</p>
+                    </div>
                 </div>
             </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="faq-item" onclick="toggleAnswer(this)" style="position: relative; overflow: hidden; border-radius: 10px; background-color: #4c4c4c; color: #fff; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                <div class="faq-question" style="padding: 20px; display: flex; justify-content: space-between; align-items: center; transition: background-color 0.3s ease;">
+                    <span style="flex-grow: 1; font-size: 1.4rem; text-align: right;">ما هي إجراءات إصدار الرخصة بعد انتهائها؟</span>
+                    <div class="icon" style="margin-left: 15px; background-color: #d9534f; color: #fff; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; transition: transform 0.3s ease;">+</div>
+                </div>
+                <div class="answer" style="display: none; max-height: 0; overflow: hidden; padding: 0 20px; color: #fff; font-size: 1.1rem; transition: max-height 0.4s ease;">
+                    <div style="padding: 15px; background-color: #555; border-radius: 10px; box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);">
+                        <p style="text-align: right; margin: 0;">التأكد من عدم وجود مخالفات سير بحق حاملها، ثم الذهاب إلى دائرة السير لإصدار الرخصة (بغض النظر عن مدة الانتهاء).</p>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <!-- ------------------End of FAQ---------------------- -->
+</div>
+
+<!-- JavaScript for Toggle Functionality -->
+<script>
+function toggleAnswer(element) {
+    const answer = element.querySelector(".answer");
+    const icon = element.querySelector(".icon");
+    
+    if (answer.style.display === "none" || answer.style.maxHeight === "0px") {
+        answer.style.display = "block";
+        answer.style.maxHeight = answer.scrollHeight + "px"; // Expand to fit content
+        icon.textContent = "-";
+        icon.style.transform = "rotate(180deg)";
+        element.style.boxShadow = "0 6px 20px rgba(0, 0, 0, 0.2)";
+        element.style.transform = "scale(1.02)";
+    } else {
+        answer.style.maxHeight = "0";
+        setTimeout(() => {
+            answer.style.display = "none"; // Hide completely after collapse
+        }, 400);
+        icon.textContent = "+";
+        icon.style.transform = "rotate(0deg)";
+        element.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.1)";
+        element.style.transform = "scale(1)";
+    }
+}
+</script>
+<!-- ------------------End of FAQ---------------------- -->
+
 
     {% endblock %}
 </body>
