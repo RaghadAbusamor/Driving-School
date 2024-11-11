@@ -1,5 +1,5 @@
 from django.urls import path
-from main.views import home, about, services,contact,exam_list,exam_detail, add_category, add_choice,add_exam,add_question, category_exams
+from main.views import home, about,ques, services,contact,exam_list,exam_detail, add_category, add_choice,add_exam,add_question, category_exams
 from main.views import category_list 
 from .views import control_panel, add_category, edit_category, delete_category, add_exam, edit_exam, delete_exam, add_question, edit_question, delete_question
 
@@ -12,6 +12,7 @@ urlpatterns = [
     path('exams/<int:exam_id>/', exam_detail, name='exam_detail'), 
     path('categories/', category_list, name='category_list'),  # Add this line for category list
     path('question/<int:question_id>/choice/add/', add_choice, name='add_choice'),
+    path('ques/', ques, name='ques'),
 
 
     path('control-panel/', control_panel, name='control_panel'),

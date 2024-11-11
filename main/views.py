@@ -21,6 +21,15 @@ def contact(request):
     return render(request, 'main/contact.html')
 
 
+
+
+# new page def
+def ques(request):
+    return render(request, 'main/ques.html')
+
+
+
+
 # Exam Section Views
 def exam_list(request):
     exams = Exam.objects.all()

@@ -1,16 +1,32 @@
-<!-- category_exams.html -->
+<!-- exam_list.html -->
 {% extends 'base.html' %}
 
-{% block content %}
-    <h1>Exams in {{ category.name }}</h1>
+{% load static %}
 
-    <ul>
-        {% for exam in exams %}
-            <li>{{ exam.title }} - <a href="{% url 'exam_detail' exam.id %}">View Details</a></li>
-        {% empty %}
-            <li>No exams available in this category.</li>
-        {% endfor %}
-    </ul>
-
-    <a href="{% url 'category_list' %}">Back to Category List</a>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/exam_list.css' %}"> <!-- Ensure this path is correct -->
+    <title>Exam List</title>
+</head>
+<body>
+    {% block content %}
+    <div class="container">
+        <h1>{{ category.name }}</h1>
+        <ul class="exam-list">
+            {% for exam in exams %}
+                <li class="exam-item">
+                    <a href="{% url 'exam_detail' exam.id %}" class="exam-link">
+                        {{ exam.title }}
+                    </a>
+                </li>
+            {% empty %}
+                <li>No exams available.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endblock %}
+</body>
+</html>

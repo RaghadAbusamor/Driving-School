@@ -2,22 +2,42 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Exam Results for {{ exam.title }}</h1>
+    <div class="result-container">
+        <h1>نتائج {{ exam.title }}</h1>
 
-    <p>You answered {{ correct_count }} out of {{ total_questions }} questions correctly.</p>
-    <p>Your score is {{ score }}%.</p>
+        <p>لقد أجبت على <strong>{{ correct_count }}</strong> من أصل <strong>{{ total_questions }}</strong> أسئلة بشكل صحيح.</p>
+        <p>درجتك هي <strong>{{ correct_count }} / {{ total_questions }}</strong>.</p> <!-- Updated score format -->
 
-    <ul>
-        {% for response in user_responses %}
-            <li>
-                <h3>Question: {{ response.question.question_text }}</h3>
-                <p>Your Answer: {{ response.selected_choice.choice_text }} {% if response.is_correct %}(Correct){% else %}(Incorrect){% endif %}</p>
-                {% if not response.is_correct %}
-                    <p>Correct Answer: {{ response.correct_choice.choice_text }}</p>
+        <h4>راجع إجاباتك:</h4>
+        <div class="review-container">
+            {% for response in user_responses %}
+                <div class="review-item {{ response.is_correct|yesno:'correct,incorrect' }}">
+                    <p><strong>السؤال:</strong> {{ response.question.question_text }}</p>
+                    
+                    <!-- Display question image if available -->
+                    {% if response.question.question_image %}
+                    <img src="{{ response.question.question_image.url }}" alt="صورة السؤال" class="question-image">
                 {% endif %}
-            </li>
-        {% endfor %}
-    </ul>
+                                    
+                    <p><strong>إجابتك:</strong> {{ response.selected_choice.choice_text }} {% if response.is_correct %} (صحيح) {% else %} (خطأ) {% endif %}</p>
+                    
+                    <!-- Display selected choice image if available -->
+                    {% if response.selected_choice.choice_image %}
+                        <img src="{{ response.selected_choice.choice_image.url }}" alt="صورة الإجابة" class="choice-image">
+                    {% endif %}
+                    
+                    {% if not response.is_correct %}
+                        <p class="correct-answer"><strong>الإجابة الصحيحة:</strong> {{ response.correct_choice.choice_text }}</p>
+                        
+                        <!-- Display correct answer image if available -->
+                        {% if response.correct_choice.choice_image %}
+                            <img src="{{ response.correct_choice.choice_image.url }}" alt="صورة الإجابة الصحيحة" class="correct-choice-image">
+                        {% endif %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
 
-    <a href="{% url 'category_exams' exam.category.id %}">Back to Category Exams</a>
+        <a href="{% url 'category_exams' exam.category.id %}" class="back-btn">العودة إلى امتحانات الفئة</a>
+    </div>
 {% endblock %}

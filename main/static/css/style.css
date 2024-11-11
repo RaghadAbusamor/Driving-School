@@ -1,26 +1,145 @@
-/* static/css/style.css */
-body {
-    background-color: #f0f0f0;
-    font-family: Arial, sans-serif;
+* {
+    scroll-behavior: smooth;
+ 
 }
 
-.contact-container {
+.mada-Title {
+    font-family: "Almarai", sans-serif;
+    font-weight: bolder;
+    font-style: normal;
+    margin: 0 0 0 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Mada:wght@200..900&display=swap');
+
+body {
+    background-color: #f4f2f3;
+    /* Light gray background */
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    scroll-behavior: smooth;
+
+}
+
+/* Navbar styles */
+.navbar {
+    /* background-color: white; */
+    z-index: 5;
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    /* Adjusted for better spacing */
+
+}
+
+.navbar-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;
+    /* Adjusted padding for better alignment */
+    background-color: rgb(19, 16, 21);
+    border-radius: 30px;
+    width: 85%;
+}
+
+.navbar-bottom>.links {
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding: 10px;
+    position: relative;
+    /* For the hover effect */
+    display: flex;
+    /* Align text and icon */
+    align-items: center;
+    /* Center items vertically */
+    transition: color 0.3s ease;
+    color: #fafcff;
+    /* Links color */
+}
+
+.navbar-bottom a:hover {
+    color: #f39c12;
+    /* Orange on hover */
+}
+
+/* Icon styles */
+.nav-icon {
+    width: 30px;
+    /* Icon size, adjusted for better fit */
+    height: 30px;
+    margin-left: 5px;
+    /* Space between icon and text */
+}
+
+/* Logo styles */
+.logo-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 15%;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Hover effect for navigation links */
+.navbar-bottom a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -5px;
+    height: 2px;
+    background-color: #f39c12;
+    /* Orange underline */
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.navbar-bottom a:hover::after {
+    transform: scaleX(1);
+}
+
+/* Footer styles */
+footer {
     text-align: center;
     padding: 20px;
+    background-color: #2c3e50;
+    /* Match footer with navbar */
+    color: #ecf0f1;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 0;
+    z-index: 50;
+    font-size: medium;
 }
 
-.contact-icons a {
-    display: inline-block;
-    margin: 10px;
-    text-decoration: none;
-    font-size: 24px;
-    color: #ce1616;
-}
+/* Responsive styles */
+@media (max-width: 768px) {
+    .navbar-bottom {
+        flex-direction: column;
+        align-items: center;
+    }
 
-.contact-icons a:hover {
-    color: #007bff; /* Add hover effect */
-}
-
-.contact-icons i {
-    margin-right: 10px;
+    .navbar-top {
+        justify-content: center;
+        margin: 1rem 0;
+    }
 }

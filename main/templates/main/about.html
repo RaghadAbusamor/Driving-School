@@ -1,5 +1,45 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h1>About Us</h1>
-    <p>We are a trusted driving school with over 20 years of experience.</p>
-{% endblock %}
+
+<!DOCTYPE html>
+<html lang="ar">
+
+<head>
+    {% load static %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/about.css' %}">
+
+    <title>من نحن</title>
+</head>
+
+<body>
+    {% block content %}
+    <div class="about-container">
+        <h1>من نحن</h1>
+
+        <section class="about-section">
+            <h2>نبذة</h2>
+            <p>
+                تأسست مدرسة ابوسمور لتعليم السياقة عام 2016 في حلحول - الخليل، على يد مدربين بخبرة تتجاوز 20 عاماً. توفر
+                المدرسة قاعة تدريب للتؤريا وتستخدم أحدث الوسائل التكنولوجية لتقديم المادة النظرية بشكل مبسط وواضح. يعمل
+                فريقنا على تدريب الطلاب بشكل تدريجي لتهيئتهم لاجتياز امتحان السياقة العملي.
+            </p>
+
+        </section>
+
+        <section class="about-section">
+            <h2>الهدف</h2>
+            <p>تحضير الطالب لامتحان السياقة والقوانين والانظمة المعمول بها في فلسطين بهدف الحصول على رخصة قيادة. .</p>
+        </section>
+
+        <section class="about-section">
+            <h2>الرؤية</h2>
+            <p>الوصول إلى مجتمع مروري واعي يحترم القوانين والأنظمة وقادر على سياقة المركبات بأمان.
+            </p>
+        </section>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

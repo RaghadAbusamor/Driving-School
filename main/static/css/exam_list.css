@@ -1,0 +1,341 @@
+/* Exam List Styles */
+.exam-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows items to wrap to the next line */
+    justify-content: center;
+    /* Center align the items */
+    list-style: none;
+    /* background-color: red; */
+    height: 150vh;
+}
+
+.exam-item {
+    margin: 20px;
+    /* Space between items */
+    flex: 0 1 calc(20% - 40px);
+    /* Responsive box sizes, 5 per row with margins */
+    display: flex;
+    /* Add flex to center align content */
+    justify-content: center;
+    /* Center align the content */
+    align-items: center;
+    /* Center align vertically */
+}
+
+.exam-link {
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    text-decoration: none;
+    background: linear-gradient(135deg, #fff 50%, hsl(352, 100%, 38%) 50%);
+    /* Gradient background */
+    color: hsl(352, 100%, 38%);
+    /* Text color matching the theme */
+    padding: 20px;
+    /* Keep some padding */
+    font-size: 2rem;
+    /* Adjusted font size for better readability */
+    border: 5px solid hsl(352, 100%, 38%);
+    /* Red border */
+    transition: all 0.3s ease;
+    /* Smooth transition for all properties */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow for depth */
+    width: 220px;
+    /* Set a fixed width for exam boxes */
+    height: 300px;
+    /* Increased height for a more rectangular shape */
+    position: relative;
+    /* Needed for pseudo-elements */
+    overflow: hidden;
+    /* Prevents overflow from pseudo-elements */
+    border-radius: 15px;
+    /* Slightly more rounded corners */
+    clip-path: polygon(0 0, 10% 0%, 100% 10%, 100% 90%, 10% 100%, 0 100%);
+    /* Unique exam shape */
+}
+
+/* Add a hover effect with a slight scale transformation */
+.exam-link:hover {
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+    color: #fff;
+    /* Change text color on hover */
+    background: hsl(352, 100%, 38%);
+    /* Red background on hover */
+}
+
+/* Add a pseudo-element for a modern touch */
+.exam-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    /* Light overlay for effect */
+    opacity: 0;
+    /* Start hidden */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for overlay */
+}
+
+.exam-link:hover::after {
+    opacity: 1;
+    /* Show overlay on hover */
+}
+
+/* Style for the text in the link */
+.exam-link span {
+    position: relative;
+    z-index: 1;
+    /* Ensure text appears above the background */
+}
+
+/* Exam List Styles */
+.exam-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allows items to wrap to the next line */
+    justify-content: center;
+    /* Center align the items */
+    list-style: none;
+    padding: 20px;
+    margin: 50px 0;
+}
+
+.exam-item {
+    margin: 20px;
+    /* Space between items */
+    flex: 0 1 calc(20% - 40px);
+    /* Responsive box sizes, 5 per row with margins */
+    display: flex;
+    /* Add flex to center align content */
+    justify-content: center;
+    /* Center align the content */
+    align-items: center;
+    /* Center align vertically */
+}
+
+.exam-link {
+    display: flex;
+    /* Use flexbox to center content */
+    justify-content: center;
+    /* Center horizontally */
+    align-items: center;
+    /* Center vertically */
+    text-decoration: none;
+    background: linear-gradient(135deg, #fff 50%, hsl(352, 100%, 38%) 50%);
+    /* Gradient background */
+    color: hsl(352, 100%, 38%);
+    /* Text color matching the theme */
+    padding: 20px;
+    /* Keep some padding */
+    font-size: 2rem;
+    /* Adjusted font size for better readability */
+    border: 5px solid hsl(352, 100%, 38%);
+    /* Red border */
+    transition: all 0.3s ease;
+    /* Smooth transition for all properties */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    /* Deeper shadow for depth */
+    width: 220px;
+    /* Set a fixed width for exam boxes */
+    height: 300px;
+    /* Increased height for a more rectangular shape */
+    position: relative;
+    /* Needed for pseudo-elements */
+    overflow: hidden;
+    /* Prevents overflow from pseudo-elements */
+    border-radius: 15px;
+    /* Slightly more rounded corners */
+    clip-path: polygon(0 0, 10% 0%, 100% 10%, 100% 90%, 10% 100%, 0 100%);
+    /* Unique exam shape */
+}
+
+/* Add a hover effect with a slight scale transformation */
+.exam-link:hover {
+    transform: scale(1.05);
+    /* Slightly scale up on hover */
+    color: #fff;
+    /* Change text color on hover */
+    background: hsl(352, 100%, 38%);
+    /* Red background on hover */
+}
+
+/* Add a pseudo-element for a modern touch */
+.exam-link::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.1);
+    /* Light overlay for effect */
+    opacity: 0;
+    /* Start hidden */
+    transition: opacity 0.3s ease;
+    /* Smooth transition for overlay */
+}
+
+.exam-link:hover::after {
+    opacity: 1;
+    /* Show overlay on hover */
+}
+
+/* Style for the text in the link */
+.exam-link span {
+    position: relative;
+    z-index: 1;
+    /* Ensure text appears above the background */
+}
+
+.exam-container {
+    max-width: 800px;
+    /* Maximum width for the container */
+    margin: 50px auto;
+    /* Center the container */
+    padding: 20px;
+    /* Padding for inner spacing */
+    border-radius: 8px;
+    /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
+    background-color: #f9f9f9;
+    /* Light background color */
+    text-align: center;
+    /* Center text */
+}
+
+h2 {
+    font-size: 2em;
+    /* Large heading */
+    color: #482D39;
+    /* Darker text color */
+    margin-bottom: 20px;
+    /* Space below heading */
+}
+
+.exam-form {
+    margin-top: 30px;
+    /* Space above the form */
+}
+
+.questions-container {
+    display: flex;
+    flex-direction: column;
+    /* Stack questions vertically */
+    gap: 20px;
+    /* Space between questions */
+}
+
+.question {
+    text-align: left;
+    /* Align question content to the left */
+    padding: 15px;
+    /* Padding for the question block */
+    border-radius: 8px;
+    /* Rounded corners */
+    background-color: #fff;
+    /* White background for questions */
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+    /* Light shadow */
+}
+
+.question-text {
+    font-size: 1.2em;
+    /* Font size for question text */
+    color: #333;
+    /* Text color for questions */
+    margin-bottom: 10px;
+    /* Space below question text */
+}
+
+.question-image {
+    max-width: 100%;
+    /* Make sure image fits within the question block */
+    height: auto;
+    /* Maintain image aspect ratio */
+    margin-bottom: 10px;
+    /* Space below image */
+    border-radius: 8px;
+    /* Rounded corners for the image */
+}
+
+.options-list {
+    list-style-type: none;
+    /* Remove bullet points */
+    padding-left: 0;
+    /* Remove left padding */
+}
+
+.option-item {
+    margin-bottom: 10px;
+    /* Space between options */
+}
+
+.option-item label {
+    display: flex;
+    align-items: center;
+    /* Align radio and text vertically */
+    gap: 10px;
+    /* Space between radio button and text */
+}
+
+.choice-image {
+    max-width: 50px;
+    /* Small image for choices */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 4px;
+    /* Slightly rounded corners */
+}
+
+.submit-btn {
+    margin-top: 30px;
+    /* Space above the submit button */
+    padding: 10px 20px;
+    /* Button padding */
+    font-size: 1em;
+    /* Font size */
+    background-color: #482D39;
+    /* Button background color */
+    color: white;
+    /* Button text color */
+    border: none;
+    /* Remove default border */
+    border-radius: 8px;
+    /* Rounded corners for the button */
+    cursor: pointer;
+    /* Pointer cursor on hover */
+    transition: background-color 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.submit-btn:hover {
+    background-color: #3b2431;
+    /* Darker shade on hover */
+}
+
+@media (max-width: 600px) {
+    .exam-container {
+        padding: 15px;
+        /* Reduce padding for small screens */
+    }
+
+    .question-text {
+        font-size: 1.1em;
+        /* Slightly smaller question text */
+    }
+
+    .question-image {
+        max-width: 100%;
+        /* Ensure image scales down */
+    }
+}

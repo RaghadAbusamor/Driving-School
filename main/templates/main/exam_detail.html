@@ -1,30 +1,51 @@
-<!-- exam_detail.html -->
-<h2>{{ exam.title }}</h2>
+{% extends 'base.html' %}
 
-<form method="post">
-    {% csrf_token %}
-    {% for question in exam.questions.all %}
-        <div>
-            <p>{{ question.question_text }}</p>
+<!DOCTYPE html>
+<html lang="ar">
 
-            {% if question.question_image %}
-                <img src="{{ question.question_image.url }}" alt="Question Image">
-            {% endif %}
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/exam_detail.css' %}">
+    <title>الاسئلة</title>
+</head>
 
-            <ul>
-                {% for choice in question.choices.all %}
-                    <li>
-                        <label>
-                            <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
-                            {{ choice.choice_text }}
-                            {% if choice.choice_image %}
-                                <img src="{{ choice.choice_image.url }}" alt="Choice Image">
-                            {% endif %}
-                        </label>
-                    </li>
+<body>
+    {% block content %}
+    <div class="exam-container">
+        <h2>{{ exam.title }}</h2>
+        <form method="post" class="exam-form">
+            {% csrf_token %}
+            <div class="questions-container">
+                {% for question in exam.questions.all %}
+                <div class="question">
+                    <p class="question-text">{{ question.question_text }}</p>
+
+                    {% if question.question_image %}
+                    <img src="{{ question.question_image.url }}" alt="Question Image" class="question-image">
+                    {% endif %}
+
+                    <ul class="options-list">
+                        {% for choice in question.choices.all %}
+                        <li class="option-item">
+                            <label>
+                                <input type="radio" name="question_{{ question.id }}" value="{{ choice.id }}">
+                                {{ choice.choice_text }}
+                                {% if choice.choice_image %}
+                                <img src="{{ choice.choice_image.url }}" alt="Choice Image" class="choice-image">
+                                {% endif %}
+                            </label>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
                 {% endfor %}
-            </ul>
-        </div>
-    {% endfor %}
-    <button type="submit">Submit Exam</button>
-</form>
+            </div>
+            <button type="submit" class="submit-btn">ارسال الامتحان</button>
+        </form>
+    </div>
+    {% endblock %}
+</body>
+
+</html>

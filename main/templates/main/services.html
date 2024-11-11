@@ -1,9 +1,50 @@
 {% extends 'base.html' %}
-{% block content %}
-    <h1>Our Services</h1>
-    <ul>
-        {% for service in services %}
-        <li>{{ service.title }} - {{ service.price }} - Duration: {{ service.duration }}</li>
-        {% endfor %}
-    </ul>
-{% endblock %}
+
+<!DOCTYPE html>
+<html lang="ar"> <!-- Set the language to Arabic -->
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/services.css' %}">
+    <title>الحصول على رخصة</title>
+</head>
+<body>
+    {% block content %}
+    <div class="license-container">
+        <h1>الحصول على رخصة</h1>
+        <p class="sub-heading">الإجراءات القانونية</p>
+        <div class="license-steps">
+            <div class="step">
+                <img src="{% static 'images/id.png' %}" alt="الحصول على الرخصة">
+                <p>الحصول على الرخصة</p>
+                <div class="hover-content">
+                    <p>بعد النجاح بالإمتحان العملي (التست) يمكنك الحصول على رخصة السياقة من دائرة الترخيص. أيام الأحد إلى الخميس من الساعة 08:00 صباحًا إلى 01:00 مساء مع صورة إحضار بطاقة الهوية الشخصية والذهاب شخصيًا لاستلام الرخصة.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/steering.png' %}" alt="الاختبار العملي">
+                <p>الاختبار العملي (التست)</p>
+                <div class="hover-content">
+                    <p>الخطوة الأخيرة بعد إتقان المهارات الأساسية في القيادة هي التقدم للإمتحان العملي الرسمي في أي يوم من الأحد إلى الخميس عن طريق المدرسة المعتمدة.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/monitor.png' %}" alt="الاختبار النظري">
+                <p>الاختبار النظري (التؤوريا)</p>
+                <div class="hover-content">
+                    <p>بعد دراسة التؤوريا جيداً والتدرب على الامتحانات، يمكنك التقدم لامتحان التؤوريا الرسمي في أي يوم من الأحد إلى الخميس.</p>
+                </div>
+            </div>
+            <div class="step">
+                <img src="{% static 'images/examination.png' %}" alt="الفحص الطبي">
+                <p>الفحص الطبي</p>
+                <div class="hover-content">
+                    <p>الفحص الطبي هو الخطوة الأولى بعد عمل المعاملة في مدرسة السياقة، ويجب الذهاب باكرًا للحصول على الفحص الطبي.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+</html>

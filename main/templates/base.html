@@ -1,29 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AbuSammour Driving School</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <!-- <link rel="stylesheet" href="../../main/static/css/style.css"> -->
+    <link rel="stylesheet" href="{% static 'css/services.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/category_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exam_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/exam_detail.css' %}">
+
 </head>
-<body>
+
+<body class="mada-Title">
     <header>
-        <nav>
-            <a href="{% url 'home' %}">Home</a>
-            <a href="{% url 'about' %}">About</a>
-            <a href="{% url 'services' %}">Services</a>
-            <a href="{% url 'contact' %}">Contact Us</a>
-            <a href="{% url 'category_list' %}">Exams</a>
+        <nav class="navbar">
+            <div class="logo-section">
+                <div class="logo">
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                </div>
+            </div>
+            <div class="navbar-bottom">
+                <a class="links" href="{% url 'contact' %}">
+                    اتصل بنا <img src="{% static 'images/telephone.png' %}" alt="call Icon" class="nav-icon">
+                </a>
+                <a class="links" href="{% url 'about' %}">
+                    من نحن
+                    <img src="{% static 'images/profile.png' %}" alt="About Icon" class="nav-icon">
+                </a>
+                <a class="links" href="#FAQ">
+                    الاسئلة الشائعة
+                    <img src="{% static 'images/qa.png' %}" alt="Services Icon" class="nav-icon">
+                </a>
+                <a class="links" href="{% url 'category_list' %}">
+                    اسئلة التؤوريا
+                    <img src="{% static 'images/exam.png' %}" alt="Exam Icon" class="nav-icon">
+                </a>
+                <a class="links" href="{% url 'home' %}">
+                    الرئيسية
+                    <img src="{% static 'images/home.png' %}" alt="Home Icon" class="nav-icon">
+                </a>
+            </div>
         </nav>
     </header>
-
     <main>
         {% block content %}{% endblock %}
     </main>
-
     <footer>
-        <p>© 2024 AbuSammour Driving School</p>
+        <div class="footer-content">
+            <p>&copy; 2024 AbuSammour Driving School. All rights reserved.</p>
+
+        </div>
     </footer>
 </body>
+
 </html>
