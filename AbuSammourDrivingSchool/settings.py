@@ -33,13 +33,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# AWS credentials
-AWS_ACCESS_KEY_ID = 'AKIA6GSNHAX7CD6VOCPG'
-AWS_SECRET_ACCESS_KEY = '4duih2usStghcI14eHJMbkpKAxXXT8cvdanNXvef'
-AWS_STORAGE_BUCKET_NAME = 'driving-school-abusamor'
-AWS_S3_REGION_NAME = 'us-east-1'  # e.g., 'us-west-1'
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
-
 # Media files configuration
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
