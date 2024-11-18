@@ -1,14 +1,14 @@
 {
     "builds": [
       {
-        "src": "Driving-school/wsgi.py",
+        "src": "AbuSammourDrivingSchool/wsgi.py",
         "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "Driving-school/wsgi.py"
+        "dest": "AbuSammourDrivingSchool/wsgi.py"
       }
     ]
   }
