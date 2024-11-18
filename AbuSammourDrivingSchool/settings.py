@@ -25,38 +25,46 @@ SECRET_KEY = 'django-insecure-x4v09c+d*xx13@-pv+y%&^4gx9jxu0fmq($8fs#u6v7-9oxy6v
 
 
 # AWS credentials
-AWS_ACCESS_KEY_ID = 'AKIA6GSNHAX7CD6VOCPG'
-AWS_SECRET_ACCESS_KEY = '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'
+AWS_ACCESS_KEY_ID = 'AKIA6GSNHAX7MP67YXP2'
+AWS_SECRET_ACCESS_KEY = 'cZb0giKWHYnpo+5ZQ+gED24OPqdClD49gCLuDpNx'
 AWS_STORAGE_BUCKET_NAME = 'driving-school-abusamor'
 AWS_S3_REGION_NAME = 'us-east-1'  # e.g., 'us-west-1'
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
+AWS_S3_FILE_OVERWRITE = False
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
-# Media files configuration
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+STORAGES = {
+
+    # Media file (image) management   
+    "default": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+    
+    # CSS and JS file management
+    "staticfiles": {
+        "BACKEND": "storages.backends.s3boto3.S3StaticStorage",
+    },
+}
 
 # Application definition
 
 INSTALLED_APPS = [
     'main',
-    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
    
 ]
 
@@ -137,8 +145,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-MEDIA_URL = '/media/'
+MEDIA_URL = 'media/'
+
 MEDIA_ROOT = BASE_DIR / 'media'
+
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
