@@ -68,6 +68,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'storages',
+    'import_export',
+
    
 ]
 
@@ -104,20 +106,56 @@ WSGI_APPLICATION = 'AbuSammourDrivingSchool.wsgi.application'
 
 # Database
 
-DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
-}
+# DATABASES = {
+#     'default': dj_database_url.config(conn_max_age=600)
+# }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'mydb-instance1',  # or your DB name
+#         'USER': 'postgres',     # your master username
+#         'PASSWORD': 'RaghadSamor123',
+#         'HOST': 'mydb-instance1.clmaki8e80rh.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'driving_school',
+#         'USER': 'postgres',
+#         'PASSWORD': '123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'postgres',  # or your DB name
+#         'USER': 'postgres',     # your master username
+#         'PASSWORD': 'RaghadSamor123',
+#         'HOST': 'postgres.clmaki8e80rh.us-east-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'driving_school',
-        'USER': 'postgres',
-        'PASSWORD': '123',
-        'HOST': 'localhost',
+        'NAME': 'postgres',  # your database name
+        'USER': 'postgres',  # your master username
+        'PASSWORD': 'RaghadSamor123',
+        'HOST': 'postgres.clmaki8e80rh.us-east-1.rds.amazonaws.com',  # new endpoint here
         'PORT': '5432',
     }
 }
