@@ -14,9 +14,10 @@ class ExamForm(forms.ModelForm):
 class QuestionForm(forms.ModelForm):
     class Meta:
         model = Question
-        fields = ['question_text', 'exam']
+        fields = ['exam', 'question_text', 'question_image']
 
 class ChoiceForm(forms.ModelForm):
     class Meta:
         model = Choice
-        fields = ['choice_text', 'is_correct', 'question']
+        fields = ['question', 'choice_text', 'choice_image', 'is_correct']
+
