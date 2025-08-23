@@ -15,19 +15,21 @@
 
 <body>
     {% block content %}
-    <div class="container">
         <h1 class="heading">اسئلة التؤوريا</h1>
         
         <!-- List of categories -->
-        <ul class="category-list">
-            {% for category in categories %}
-                <li class="category-item">
-                    <a href="{% url 'category_exams' category.id %}" class="category-link">{{ category.name }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+        {% if categories %}
+            <ul class="category-list">
+                {% for category in categories %}
+                    <li class="category-item">
+                        <a href="{% url 'category_exams' category.id %}" class="category-link">{{ category.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-categories">لا يوجد اي اسئلة حتى الان</p>
+        {% endif %}
 
-    </div>
     {% endblock %}
 </body>
 

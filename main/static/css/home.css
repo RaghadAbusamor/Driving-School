@@ -1,351 +1,119 @@
+/* home.css */
+
+/* Reset */
 body {
-    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Tajawal', sans-serif;
 }
 
+/* Hero Section */
 .hero-section {
-    flex: 1;
-    width: 100%;
-    text-align: center;
+    position: relative;
     height: 80vh;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
-/* Overlay layer */
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(184, 184, 184, 0.572);
-    z-index: 1;
-    animation: fadeIn 2s ease-out;
-    /* Fade-in effect for overlay */
-    animation: bgZoom 15s ease-in-out infinite;
-    /* Zoom-in effect */
-
-}
-
-/* Background Image Styling */
 .bg-image {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: 0;
     animation: bgZoom 15s ease-in-out infinite;
-    /* Zoom-in effect */
 }
 
-/* Content Styling */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(184, 184, 184, 0.57);
+    z-index: 1;
+    animation: fadeIn 2s ease-out;
+}
+
 .content {
     position: relative;
     z-index: 2;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    opacity: 0;
-    transform: translateY(20px);
+    text-align: center;
+    color: #fff;
     animation: contentFadeIn 2.5s ease-out forwards;
-
-    top: 20%;
-    transform: translate(-50%, -50%);
 }
 
-/* Title Styling */
-.mada-Title {
-    /* font-size: 4rem; */
+.title {
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    text-shadow: 1px 1px 5px #f39c12;
 }
 
 .sub-text {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: #000000 1px 1px 5px;
+    text-shadow: 1px 1px 5px #000;
 }
 
-.title {
-    text-shadow: #f39c12 1px 1px 5px;
-    /* font-size: 4rem; */
-    animation: titleAnimation 3s ease forwards;
-    font-size: 4rem;
-
-}
-
-/* Button Styling */
 .test-E {
+    display: inline-block;
     background-color: #c2001a;
-    color: white;
-    padding: 1rem 10rem;
+    color: #fff;
+    padding: 1rem 8rem;
     font-size: 2rem;
     border-radius: 50px;
     text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-    animation: buttonSlideUp 3s ease forwards;
+    transition: transform 0.3s, background-color 0.3s;
 }
 
 .test-E:hover {
     background-color: #721320;
     transform: scale(1.1);
-    /* Button grows on hover */
-}
-
-/* Responsive design */
-@media (max-width: 1200px) {
-    .content {
-        font-size: 6rem;
-        padding: 4rem;
-    }
-}
-
-@media (max-width: 992px) {
-    .content {
-        font-size: 5rem;
-        padding: 3rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .content {
-        font-size: 4rem;
-        padding: 2.5rem;
-        top: calc(15%);
-        /* Adjusting top for smaller screens */
-    }
-}
-
-@media (max-width: 576px) {
-    .content {
-        font-size: 3.5rem;
-        padding: 2rem;
-        top: calc(10%);
-    }
-}
-
-@media (max-width: 400px) {
-    .content {
-        font-size: 3rem;
-        padding: 1.5rem;
-        top: calc(5%);
-    }
 }
 
 
-
-
-/* Large Devices (Desktops) */
-@media (min-width: 1200px) {
-
-    .test-E {
-        font-size: 2rem;
-        padding: 1rem 10rem;
-    }
-}
-
-/* Tablets */
-@media (min-width: 768px) and (max-width: 1199px) {
-
-    .test-E {
-        font-size: 1.8rem;
-        padding: 1rem 7rem;
-    }
-}
-
-/* Mobile Devices */
-@media (max-width: 767px) {
-
-    /* Hero Section */
-    .hero-section {
-        padding-top: 0;
-    }
-
-    .content {
-        padding: 2rem;
-    }
-
-    /* Button Styling */
-    .test-E {
-        font-size: 1.2rem;
-        padding: 0.8rem 5rem;
-    }
-}
-
-/* Animations */
-
-/* Background zoom effect */
-@keyframes bgZoom {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.1);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Hero section fade-in */
-@keyframes heroFadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
-}
-
-/* Content fade-in and slide-up */
-@keyframes contentFadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Overlay fade-in */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Title delayed fade-in */
-@keyframes titleAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Button slide-up */
-@keyframes buttonSlideUp {
-    0% {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@media (max-width: 768px) {
-    .faq-item {
-        width: 100% !important;
-        margin: 10px 0;
-        /* Add vertical margin for mobile view */
-    }
-}
-
-
-.license-container {
-    /* padding: 20px; */
-    /* background-color: red; */
-    width: 100%;
-    height: 100vh;
-}
-
-h1 {
-    /* font-size: 3rem; */
-    color: #000;
-    margin-bottom: 10px;
-    font-weight: bolder;
-}
-
-.sub-heading {
-    font-size: 2rem;
-    color: #555;
-    margin-bottom: 30px;
-}
 
 .license-steps {
     display: flex;
-    justify-content: space-around;
     flex-wrap: wrap;
-    /* background-color: pink; */
-    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .step {
     background-color: hsl(352, 100%, 38%);
-    color: white;
-    width: 15rem;
-    height: 22rem;
+    color: #fff;
+    width: 220px;
     padding: 20px;
     border-radius: 20px;
     text-align: center;
-    font-size: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
     position: relative;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden;
 }
 
 .step:hover {
     transform: scale(1.05);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.step img {
-    /* width: 120px; */
-    /* height: 120px; */
-    /* margin-bottom: 10px; */
-    object-fit: contain;
-}
-
-.step p {
-    font-size: 1.8rem;
-    margin: 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .hover-content {
     position: absolute;
-    bottom: 50;
-    left: 50;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: rgba(0,0,0,0.85);
     color: #fff;
     display: flex;
-    flex-direction: column;
-    align-items: center;
     justify-content: center;
-    text-align: center;
-    font-size: 1.1rem;
-    padding: 30px;
+    align-items: center;
     opacity: 0;
-    transform: translateY(100%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition: opacity 0.3s, transform 0.3s;
     border-radius: 20px;
-    direction: rtl;
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100%);
 }
 
 .step:hover .hover-content {
@@ -353,23 +121,97 @@ h1 {
     transform: translateY(0);
 }
 
-.hover-content p {
-    line-height: 1.5;
-    font-size: 1.2rem;
+/* FAQ Section */
+.faq-container {
+    background-color: #eef2f3;
+    padding: 50px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.faq-content {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    max-width: 900px;
+    width: 100%;
+    padding: 40px;
+}
+
+.faq-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.faq-item {
+    background-color: #4c4c4c;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.faq-item:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+}
+
+.faq-question {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.faq-question .icon {
+    background-color: #d9534f;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
 }
 
-@media screen and (max-width: 768px) {
-    .license-steps {
-        flex-direction: column;
-        align-items: center;
-    }
+.answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    padding: 0 20px;
+}
 
-    .step {
-        width: 100%;
-        max-width: 300px;
-    }
+.answer > div {
+    background-color: #555;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: right;
+}
+
+/* Animations */
+@keyframes bgZoom {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes fadeIn { 0% {opacity:0;} 100% {opacity:1;} }
+@keyframes contentFadeIn {0% {opacity:0; transform:translateY(20px);} 100% {opacity:1; transform:translateY(0);}}
+
+/* Responsive Adjustments */
+@media(max-width: 1500px){
+    .title { font-size: 3rem; }
+    .sub-text { font-size: 2rem; }
+    .test-E { padding: 0.8rem 5rem; font-size: 1.5rem; }
+    .step { width: 45%; margin: 10px; }
+}
+
+@media(max-width: 1500px){
+    .title { font-size: 2.5rem; }
+    .sub-text { font-size: 1.8rem; }
+    .test-E { padding: 0.6rem 3rem; font-size: 1.2rem; }
+    .step { width: 90%; margin: 10px 0; }
 }
